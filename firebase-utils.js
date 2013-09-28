@@ -66,6 +66,7 @@ _.forEach({
 	onChildMoved: FirebaseEvents.CHILD_MOVED
 }, function(eventName, key) {
 	Firebase.prototype[key] = _.partial(Firebase.prototype.on, eventName);
+	Firebase.prototype[key + 'Once'] = _.partial(Firebase.prototype.once, eventName);
 });
 
 

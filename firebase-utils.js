@@ -7,7 +7,6 @@
  */
 
 
-
 /**
  * Constants for event names to aid code completion and minification.
  */
@@ -59,14 +58,15 @@ Firebase.prototype.on = (function(_super) {
  * Add event handler registration methods for common events to aid code completion.
  */
 _.forEach({
-	onValue: FirebaseEvents.VALUE,
-	onChildAdded: FirebaseEvents.CHILD_ADDED,
-	onChildChanged: FirebaseEvents.CHILD_CHANGED,
-	onChildRemoved: FirebaseEvents.CHILD_REMOVED,
-	onChildMoved: FirebaseEvents.CHILD_MOVED
+	Value: FirebaseEvents.VALUE,
+	ChildAdded: FirebaseEvents.CHILD_ADDED,
+	ChildChanged: FirebaseEvents.CHILD_CHANGED,
+	ChildRemoved: FirebaseEvents.CHILD_REMOVED,
+	ChildMoved: FirebaseEvents.CHILD_MOVED
 }, function(eventName, key) {
-	Firebase.prototype[key] = _.partial(Firebase.prototype.on, eventName);
-	Firebase.prototype[key + 'Once'] = _.partial(Firebase.prototype.once, eventName);
+	Firebase.prototype['on' + key] = _.partial(Firebase.prototype.on, eventName);
+	Firebase.prototype['off' + key] = _.partial(Firebase.prototype.off, eventName);
+	Firebase.prototype['on' + key + 'Once'] = _.partial(Firebase.prototype.once, eventName);
 });
 
 

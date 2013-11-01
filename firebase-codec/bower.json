@@ -1,0 +1,21 @@
+{
+  "name": "firebase-codec",
+  "main": "firebase-codec.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ebeeson/firebase-utils",
+  "authors": [
+    "Erik Beeson <erik.beeson@gmail.com>"
+  ],
+  "description": "Sanitize Firebase paths.",
+  "keywords": [
+    "firebase"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
